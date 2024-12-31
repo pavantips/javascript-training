@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Viewer</title>
+    <script src="pdf.js"></script>
+  </head>
+  <body>
+    <h1>PDF Viewer</h1>
+    <div id="viewer" style="height: 90vh; border: 1px solid #ccc"></div>
+
+    <script>
+      // Extract the PDF URL from the query parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const pdfUrl = urlParams.get("pdf");
+
+      // Check if a PDF URL was provided
+      if (!pdfUrl) {
+        document.body.innerHTML = "<h2>Error: No PDF URL provided.</h2>";
+      } else {
+        // Initialize the vendor's PDF viewer
+        const WebViewerConstructor = isWebComponent()
+          ? WebViewer.WebComponent
+          : WebViewer;
+
+        WebViewerConstructor(
+          {
+            path: "path/to/vendor/lib", // Path to WebViewer library
+            initialDoc: pdfUrl, // Load the PDF from the query parameter
+          },
+          document.getElementById("viewer")
+        ).then((instance) => {
+          console.log("PDF loaded successfully.");
+        });
+      }
+    </script>
+  </body>
+</html>

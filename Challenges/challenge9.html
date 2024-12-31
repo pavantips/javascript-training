@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge 9</title>
+  </head>
+  <h1>JavaScript Basic Challenges</h1>
+  <h2>Challenge 9</h2>
+  <body>
+    <script>
+      var primaryColors = ["red", "blue", "yellow"];
+      var secondaryColors = ["orange", "green", "purple"];
+
+      var userColor = prompt("Enter a color:", "");
+
+      // Check if the user input is in the primaryColors array
+      if (primaryColors.includes(userColor)) {
+        console.log(
+          `The color you have entered is a primary color: ${userColor}`
+        );
+      }
+      // Check if the user input is in the secondaryColors array
+      else if (secondaryColors.includes(userColor)) {
+        console.log(
+          `The color you have entered is a secondary color: ${userColor}`
+        );
+      }
+      // Handle case where the input is not found in either array
+      else {
+        console.log(
+          `The color you entered, "${userColor}", is not recognized.`
+        );
+      }
+    </script>
+  </body>
+</html>

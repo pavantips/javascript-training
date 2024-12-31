@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Square Function</title>
+  </head>
+  <body>
+    <h1>Calculate the Square of a Number</h1>
+    <form id="squareForm">
+      <label>Enter a number: <input type="text" id="numberInput" /></label>
+      <button type="submit">Calculate</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+      // Add event listener to handle form submission
+      document
+        .getElementById("squareForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent form from reloading the page
+
+          // Get the input value
+          var number = document.getElementById("numberInput").value;
+
+          // Validate input
+          if (isNaN(number) || number.trim() === "") {
+            document.getElementById("result").textContent =
+              "Please enter a valid number.";
+            return;
+          }
+
+          // Calculate the square
+          var square = number * number;
+
+          // Display the result
+          document.getElementById(
+            "result"
+          ).textContent = `The square of ${number} is ${square}.`;
+        });
+    </script>
+  </body>
+</html>

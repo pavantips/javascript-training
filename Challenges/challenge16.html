@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions - Challenges</title>
+  </head>
+  <h1>Challenge 16</h1>
+  <body>
+    <script>
+      var yourName = prompt("Hello, who are you?", ""); // Prompt user for name
+      var food = ["idli", "dosa", "wada", "poori"]; // Array of food items
+
+      // Function to create a greeting
+      function hello(name) {
+        if (name == null || name.trim() === "") {
+          return "Hmm, feels like you didn't give me a name."; // Handle empty or null name
+        } else {
+          return `Hello ${name}, and Welcome!`; // Return greeting for valid name
+        }
+      }
+
+      // Function to generate a random integer between min and max (inclusive)
+      function randomInt(min, max) {
+        return Math.floor((max - min + 1) * Math.random()) + min;
+      }
+
+      // Function to offer hospitality with food options
+      function hospitality(name, gift) {
+        console.log(hello(name)); // Call hello() to display the greeting
+
+        for (var i = 0; i < gift.length; i++) {
+          // Pick a random gift for each iteration
+          var randomGift = gift[randomInt(0, gift.length - 1)];
+          console.log(`${name}, would you like some ${randomGift}?`); // Display the random gift
+        }
+      }
+
+      // Call hospitality function with user's name and food array
+      hospitality(yourName, food);
+    </script>
+  </body>
+</html>

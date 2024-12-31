@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome with Strings with modulus
+    </title>
+</head>
+<body>
+
+    <script>
+        var text1 = "I am really hungry for some"
+        var text2 = text1.toUpperCase(); //converting to uppercase
+       // console.log(text1); //return the same string
+       // console.log(text2); //return the upper case string
+
+        var reallyLocation = text1.search('really'); //position of the word - really
+        var specialWord = text1.substr(reallyLocation, 6); // get 6 chars from that position 5
+        specialWord = specialWord.toUpperCase(); //convert that word into upper case
+        var text3 = text1.replace('really',specialWord); //replace really to REALLY
+       // console.log(text3); // show the new string with really in upper case REALLY
+
+        var foods =["cookie", "candy", "milk", "fries"] //array with some foods
+       // console.log (`${text3} ${foods[0]}`); //  print the earlier statemenet with the first array value in foods
+        for (var i=0; i<foods.length; i++){ 
+            var remainder = i % 2; //variable to find out the division result of arrayvalue/2
+
+            if (remainder ==0){                     
+                var foodUpper = foods[i].toUpperCase(); //if the result is 0, then convert that to uppercase
+                console.log (`${text1} ${foodUpper}`); //show the uppercase result in new varaiable called foodUpper
+            }
+            else {
+                foodUpper = foods[i].toLowerCase; //if the result is not 0, then convert that to lowercase
+                console.log (`${text1} ${foods[i]}`); //show the lower result in the same variable called foodUpper
+            }
+            //console.log (`${text3} ${foods[i]}`);
+        }
+    
+</script>
+    
+</body>
+</html>

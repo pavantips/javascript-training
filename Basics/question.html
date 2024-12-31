@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question</title>
+  </head>
+  <body>
+    <h1>This is your first question</h1>
+    <h2>Question 1: What is 1 + 1?</h2>
+    <form id="quizForm">
+      <label> <input type="radio" name="answer" value="2" /> 2 </label><br />
+      <label> <input type="radio" name="answer" value="3" /> 3 </label><br />
+      <label> <input type="radio" name="answer" value="4" /> 4 </label><br />
+      <label> <input type="radio" name="answer" value="5" /> 5 </label><br />
+      <div>
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+
+    <!-- Result container to display feedback -->
+    <div
+      id="result"
+      style="margin-top: 20px; font-size: 18px; font-weight: bold"
+    ></div>
+
+    <script>
+      var myForm = document.getElementById("quizForm");
+      var resultDiv = document.getElementById("result");
+
+      myForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Get the selected radio button
+        var selectedAnswer = document.querySelector(
+          'input[name="answer"]:checked'
+        );
+
+        if (selectedAnswer) {
+          // Check if the answer is correct
+          if (selectedAnswer.value === "2") {
+            resultDiv.innerHTML = "✅ Correct! 1 + 1 is 2.";
+            resultDiv.style.color = "green";
+          } else {
+            resultDiv.innerHTML = "❌ Incorrect. The correct answer is 2.";
+            resultDiv.style.color = "red";
+          }
+        } else {
+          resultDiv.innerHTML = "⚠️ Please select an answer before submitting.";
+          resultDiv.style.color = "orange";
+        }
+      });
+    </script>
+  </body>
+</html>

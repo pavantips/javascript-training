@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to functions</title>
+  </head>
+  <body>
+    <script>
+      var foods = ["idli", "dosa", "wada", "poori"];
+
+      function randomInt(min, max) {
+        //take 2 numbers
+        /*
+        var numOfvalues = max - min + 1; // sub max - min and add 1
+        var randomNum = Math.random(); // pass inbuilt function to a variable
+        var randomVal = randomNum * numOfvalues; // new variable to multiply both above variables
+        var roundedRandomval = Math.floor(randomVal); //new variable and invoke math function
+        var finalNum = min + roundedRandomval; //add min from line 12 to roundedrandomval
+        
+        return finalNum;*/
+
+        return Math.floor((max - min + 1) * Math.random()) + min; //refactored to avoid all the variables declared above
+      }
+
+      console.log(foods[randomInt(0, 3)]);
+    </script>
+  </body>
+</html>

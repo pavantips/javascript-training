@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions - Challenges</title>
+  </head>
+  <h1>Challenge 14</h1>
+  <body>
+    <script>
+      var yourName = prompt("Hello, who are you", "");
+
+      function hello(name) {
+        var greeting;
+
+        if (name == null || name == "") {
+          greeting("Hmm, feels like you didnt give me a name");
+        } else {
+          greeting(`Hello ${name}, and Welcome!`);
+        }
+        return greeting;
+      }
+
+      console.log(hello(yourName));
+    </script>
+  </body>
+</html>

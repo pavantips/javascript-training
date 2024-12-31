@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <h1>Keydown Event</h1>
+    <p>Press any key to continue</p>
+
+    <script>
+      document.addEventListener("keydown", function (event) {
+        //alert(`the ${event.which} key was pressed`);
+        alert(`the ${event.key} key was pressed`);
+      });
+    </script>
+  </body>
+</html>

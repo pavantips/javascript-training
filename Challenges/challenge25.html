@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Events</title>
+  </head>
+  <body>
+    <h1>Javascript Events</h1>
+    <div>
+      <p>this is a first paragraph</p>
+    </div>
+
+    <button id="addBtn">Add</button>
+    <button id="removeBtn">Remove</button>
+
+    <script>
+      // Select elements
+      var divTag = document.querySelector("div");
+      var btnAdd = document.querySelector("#addBtn");
+      var btnDelete = document.querySelector("#removeBtn");
+
+      // Add new paragraph
+      btnAdd.addEventListener("click", function () {
+        var myTag = document.createElement("p"); // Create new paragraph
+        var myText = document.createTextNode("Here is a new paragraph."); // Create text
+        myTag.appendChild(myText); // Add text to paragraph
+        divTag.appendChild(myTag); // Add paragraph to div
+      });
+
+      // Remove the last paragraph
+      btnDelete.addEventListener("click", function () {
+        if (divTag.lastElementChild.tagName === "P") {
+          divTag.removeChild(divTag.lastElementChild); // Remove the last paragraph
+        } else {
+          alert("No more paragraphs to remove!");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple loop</title>
+</head>
+<body>
+
+
+<script>
+    //while loop
+    var incrementor =0;
+    var text ="";
+/*
+    while (incrementor <10){
+        text += "The incrementor has gone up to " + incrementor + "\n";
+        incrementor ++;
+    }
+    console.log (text);
+*/
+// with template literals
+
+while (incrementor <10){
+        text += `The incrementor has gone up to ${incrementor} \n`;
+        incrementor++;
+}
+console.log (text);
+
+var  i=1;
+var  text = "";
+
+while (i <10){
+        text += `The incrementor is ${i} and incrementor squared is ${i * i} \n`;
+        i++;
+    }
+    console.log (text);
+
+</script>
+</body>
+</html>

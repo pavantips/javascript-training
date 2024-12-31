@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document object model</title>
+  </head>
+
+  <body>
+    <h1>DOM examples</h1>
+    <div id="special">
+      <p>this is a first paragraph</p>
+      <p>this is a second paragraph</p>
+      <p>this is a third paragraph</p>
+    </div>
+
+    <script>
+      var ps = document.querySelector("#special");
+      ps.innerHTML = "<p> this is a fourth paragraph</p>";
+      ps.style.color = "blue";
+    </script>
+  </body>
+</html>

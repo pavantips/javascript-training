@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <h1>Javascript Events</h1>
+    <div>
+      <p>this is a first paragraph</p>
+    </div>
+
+    <button>Turn Green</button>
+
+    <script>
+      // creating and add elements using script
+
+      var btn = document.querySelector("button");
+
+      btn.onclick = function () {
+        var myTag = document.createElement("p"); //create new paragraph
+        var myText = document.createTextNode("here is a new paragraph"); //new text for the paragraph
+        myTag.appendChild(myText); //add the new text to the new paragraph
+        var myDiv = document.querySelector("div"); //query for the div in the code
+        myDiv.appendChild(myTag); //add the new paragraph to the div  ;
+      };
+    </script>
+  </body>
+</html>

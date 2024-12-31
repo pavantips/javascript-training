@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Converter</title>
+  </head>
+  <body>
+    <h1>Time Converter - Seconds to Minutes</h1>
+
+    <form id="timeForm">
+      <label>
+        Enter the time in seconds:
+        <input type="number" name="seconds" id="secondsInput" required />
+      </label>
+      <input type="submit" value="Convert" />
+    </form>
+
+    <!-- Display the result -->
+    <div
+      id="result"
+      style="margin-top: 20px; font-size: 18px; font-weight: bold"
+    ></div>
+
+    <script>
+      // Get the form, input, and result container elements
+      var timeForm = document.getElementById("timeForm");
+      var resultDiv = document.getElementById("result");
+
+      // Add event listener for form submission
+      timeForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Get the input value
+        var secondsInput = document.getElementById("secondsInput").value;
+
+        // Convert the value to a number
+        var seconds = parseFloat(secondsInput);
+
+        if (isNaN(seconds) || seconds < 0) {
+          // Handle invalid input
+          resultDiv.innerHTML = "⚠️ Please enter a valid positive number.";
+          resultDiv.style.color = "orange";
+        } else {
+          // Calculate the time in minutes
+          var minutes = (seconds / 60).toFixed(2);
+
+          // Display the result
+          resultDiv.innerHTML = `✅ ${seconds} seconds is equal to ${minutes} minutes.`;
+          resultDiv.style.color = "green";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document object model</title>
+  </head>
+
+  <body>
+    <h1>DOM examples</h1>
+    <div>
+      <p>this is a first paragraph</p>
+      <p>this paragraph should be removed</p>
+    </div>
+
+    <script>
+      var myDiv = document.querySelector("div");
+      myDiv.removeChild(myDiv.children[1]);
+    </script>
+  </body>
+</html>
